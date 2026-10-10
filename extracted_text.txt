@@ -1,0 +1,1240 @@
+
+--- Page 1 ---
+Lecture 1: Introduction to Deep Learning
+6.S898 Deep Learning
+Fall 2022
+Speaker: Sara Beery
+https://phillipi.github.io/6.s898
+© Krizhevsky, Sutskever, and Hinton. All rights reserved. This 
+content is excluded from our Creative Commons license. For more 
+information, see https://ocw.mit.edu/help/faq-fair-use/
+1
+
+--- Page 2 ---
+What is “deep learning”?
+1. Neural nets: A class of machine learning architectures that
+use stacks of linear transformations interleaved with 
+pointwise nonlinearities 
+2. Differentiable programming: A programming paradigm
+where parameterize parts of the program and let gradient-
+based optimization tune the parameters
+2
+
+--- Page 3 ---
+Course philosophy
+• Breakthroughs in deep learning have been driven by a mixture of theory
+and practice, and both dimensions are vital for future progress in the field
+• This course provides:
+• Theoretical grounding in important deep learning building blocks
+• Practice implementing, understanding, and using those blocks
+3
+
+--- Page 4 ---
+AI Assistants Policy
+•Our policy for using ChatGPT and other AI assistants is identical to our policy for using
+human assistants.
+•This is a deep learning class and you should try out all the latest AI assistants (they are
+pretty much all using deep learning). It's very important to play with them to learn what
+they can do and what they can't do. That's a part of the content of this course.
+•Just like you can come to office hours and ask a human questions (about the lecture
+material, clarifications about pset questions, tips for getting started, etc), you are very
+welcome to do the same with AI assistants.
+•But: just like you are not allowed to ask an expert friend to do your homework for you,
+you also should not ask an expert AI.
+•If it is ever unclear, just imagine the AI as a human and apply the same norm as you
+would with a human.
+•If you work with any AI on a pset, briefly describe which AI and how you used it at the
+top of the pset (a few sentences is enough).
+4
+
+--- Page 5 ---
+Why are we here?
+• What’s the goal?
+• Model complex phenomena in the real world
+• What are complex phonemena?
+• Natural language, Images, DNA, Ecosystems, Climate Change
+• Why is this hard?
+• See: complex
+• Existence proof for deep learning as a solution: The human brain?
+5
+
+--- Page 6 ---
+1. Introduction to Deep Learning
+• How did we get where we are today? (Brief History)
+• What we expect you have seen before (ok if you haven’t!)
+• What we will cover in this class
+6
+
+--- Page 7 ---
+A brief history of Neural Networks
+time
+enthusiasm
+7
+
+--- Page 8 ---
+Perceptrons, 1958
+Rosenblatt
+Left © George Nagy. Right © American Psychological Association, Inc. All rights 
+reserved. This content is excluded from our Creative Commons license. For more 
+information, see https://ocw.mit.edu/help/faq-fair-use/
+8
+
+--- Page 9 ---
+Perceptrons, 1958
+© source unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/
+9
+
+--- Page 10 ---
+time
+enthusiasm
+Perceptrons, 
+1958
+10
+
+--- Page 11 ---
+Minsky and Papert, Perceptrons, 1972
+© source unknown. All rights reserved. This content is excluded from our Creative 
+Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/
+11
+
+--- Page 12 ---
+time
+enthusiasm
+Perceptrons, 
+1958
+Minsky and Papert, 
+1972
+12
+
+--- Page 13 ---
+Parallel Distributed Processing (PDP), 1986
+© Massachusetts Institute of Technology. All rights 
+reserved. This content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+13
+
+--- Page 14 ---
+XOR problem
+Inputs
+Output
+0       0
+0 
+1       0
+1 
+0       1
+1 
+1       1
+0
+PDP authors pointed to the backpropagation algorithm 
+as a breakthrough, allowing multi-layer neural networks to be 
+trained.  Among the functions that a multi-layer network can 
+represent but a single-layer network cannot:  the XOR function.
+0
+1
+0
+1
+14
+
+--- Page 15 ---
+time
+enthusiasm
+Perceptrons, 
+1958
+Minsky and Papert, 
+1972
+PDP book, 
+1986
+15
+
+--- Page 16 ---
+LeCun conv nets, 1998
+http://yann.lecun.com/exdb/lenet/index.html
+Demos:
+© IEEE. All rights reserved. This content is 
+excluded from our Creative Commons license. For 
+more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+16
+
+--- Page 17 ---
+Neural Information Processing Systems 2000
+• Neural Information Processing Systems is the
+premier conference on machine learning.  Evolved
+from an interdisciplinary conference to a machine
+learning conference.
+• For the 2000 conference:
+– title words predictive of paper acceptance:  “Belief
+Propagation” and “Gaussian”.
+– title words predictive of paper rejection:  “Neural” and
+“Network”.
+17
+
+--- Page 18 ---
+time
+enthusiasm
+Perceptrons, 
+1958
+Minsky and Papert, 
+1972
+PDP book, 
+1986
+AI winter, 
+2000
+18
+
+--- Page 19 ---
+Krizhevsky, Sutskever, and Hinton, NeurIPS 2012
+“Alexnet”
+© Krizhevsky, Sutskever, and Hinton. All rights reserved. This content is excluded 
+from our Creative Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+19
+
+--- Page 20 ---
+Krizhevsky, Sutskever, and Hinton, NeurIPS 2012
+© Krizhevsky, Sutskever, and Hinton. All rights 
+reserved. This content is excluded from our 
+Creative Commons license. For more 
+information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+20
+
+--- Page 21 ---
+time
+enthusiasm
+Perceptrons, 
+1958
+Minsky and Papert, 
+1972
+PDP book, 
+1986
+AI winter, 
+2000
+Krizhevsky, 
+Sutskever, 
+Hinton, 2012
+28 years
+28 years
+21
+
+--- Page 22 ---
+time
+enthusiasm
+Perceptrons, 
+1958
+Minsky and Papert, 
+1972
+PDP book, 
+1986
+AI winter, 
+2000
+Krizhevsky, 
+Sutskever, 
+Hinton, 2012
+28 years
+28 years
+What comes next?
+2028 ?
+22
+
+--- Page 23 ---
+What comes next?
+Perceptrons, 
+1958
+Minsky and Papert, 
+1972
+PDP book, 
+1986
+AI winter, 
+2000
+time
+enthusiasm
+28 years
+28 years
+Krizhevsky, 
+Sutskever, 
+Hinton, 2012
+2028 ?
+23
+
+--- Page 24 ---
+What is deep learning today?
+• Autograd (pytorch, tensorflow) 
+• Billion+ data point datasets 
+• Parallel training on thousands of GPUs 
+• Billion+ parameter architectures 
+• Million+ dollar training costs 
+• Shockingly good results 
+• Massive isn’t necessary - e.g. Stable Diffusion 
+• Open source community and modular reuse
+24
+
+--- Page 25 ---
+Signposting for the rest of the lecture
+What we expect you to 
+have seen before
+What we will cover in 
+this class
+25
+
+--- Page 26 ---
+What we expect you to have seen before
+• Gradient descent
+26
+
+--- Page 27 ---
+Gradient descent
+J (θ)
+θ = arg min
+θ
+N
+i =1
+L (f θ(x ( i ) ), y ( i ) )
+27
+
+--- Page 28 ---
+2
+1
+0
+-1
+x
+-2
+-3
+-3
+-2
+y
+-1
+0
+1
+2
+Gradient descent
+J (θ)
+θ1
+θ2
+θ = arg min
+θ
+J (θ)
+x
+28
+
+--- Page 29 ---
+What we’ll cover in this class
+• Backprop and differentiable programming
+29
+
+--- Page 30 ---
+learning rate
+Gradient descent
+One iteration of gradient descent:
+θt+1 = θt −ηt
+∂J (θ)
+∂θ
+θ= θt
+J (θ)
+θ = arg min
+θ
+N
+i =1
+L (f θ(x ( i ) ), y ( i ) )
+Lecture 2: Backprop and Differentiable Programming 
+30
+
+--- Page 31 ---
+What we expect you to have seen before
+• Gradient descent
+• MLPs, Nonlinearities (ReLu)
+31
+
+--- Page 32 ---
+Input 
+representation 
+Output 
+representation 
+Computation in a neural net
+32
+
+--- Page 33 ---
+Computation in a neural net
+Input 
+representation 
+Output 
+representation 
+x i
+wij
+Linear layer
+zj
+zj =
+i
+wij x i
+33
+
+--- Page 34 ---
+Computation in a neural net
+Input 
+representation 
+Output 
+representation 
+x i
+wij
+Linear layer
+weights 
+bias 
+bj
+1
+zj
+zj =
+i
+wij x i + bj
+34
+
+--- Page 35 ---
+zj = x T wj + bj
+Computation in a neural net
+Input 
+representation 
+Output 
+representation 
+Linear layer
+weights 
+bias 
+θ = { W , b}
+wj
+x
+bj
+1
+parameters of the model 
+zj
+35
+
+--- Page 36 ---
+Input 
+representation 
+Output 
+representation 
+x
+w
+1
+b
+g(z)
+z
+g(z) =
+1,
+if
+z > 0
+0,
+otherwise
+Pointwise 
+Non-linearity 
+Computation in a neural net
+“Perceptron”
+z
+g(z)
+36
+
+--- Page 37 ---
+Computation in a neural net
+Input 
+representation 
+Output 
+representation 
+x
+w
+1
+b
+g(z)
+z
+g(z) =
+1,
+if
+z > 0
+0,
+otherwise
+z
+g(z)
+37
+
+--- Page 38 ---
+Computation in a neural net — nonlinearity
+Input 
+representation 
+Output 
+representation 
+x
+w
+1
+b
+z
+g(z)
+Tanh
+g(z)
+z
+g(z) = ez −e−z
+ez + e−z
+38
+
+--- Page 39 ---
+Tanh
+• Bounded between [-1,+1] 
+• Saturation for large +/- inputs 
+• Gradients go to zero 
+• Outputs centered at 0 
+• tanh(z) = 2 sigmoid(2z) 1
+Computation in a neural net — nonlinearity
+g(z)
+z
+g(z) = ez −e−z
+ez + e−z
+39
+
+--- Page 40 ---
+Sigmoid
+• Interpretation as firing rate of neuron 
+• Bounded between [0,1] 
+• Saturation for large +/- inputs 
+• Gradients go to zero 
+• Outputs centered at 0.5  
+(poor conditioning) 
+• Not used in practice
+Computation in a neural net — nonlinearity
+g(z)
+z
+g(z) =
+1
+1 + e−h
+40
+
+--- Page 41 ---
+Rectiﬁed linear unit (ReLU)
+• Unbounded output (on positive side) 
+• Efficient to implement: 
+• Also seems to help convergence (see 
+6x speedup vs tanh in [Krizhevsky et al.]) 
+• Drawback: if strongly in negative 
+region, unit is dead forever (no gradient). 
+• Default choice: widely used in current 
+models.
+Computation in a neural net — nonlinearity
+g(z)
+z
+g(z) = max(0 , z )
+∂g
+∂z =
+0,
+if
+z < 0
+1,
+if
+z ≥0
+41
+
+--- Page 42 ---
+Output 
+representation 
+1
+y
+W 2j
+b2j
+= “hidden units”
+z, h
+h = g(z)
+Input 
+representation 
+Intermediate 
+representation
+x
+1
+Stacking layers
+W 1j
+b1j
+z
+42
+
+--- Page 43 ---
+1
+Input 
+representation 
+Intermediate 
+representation 
+x
+1
+Stacking layers
+Output 
+representation 
+h
+y
+W 1
+W 2
+b2
+b1
+h = g(W 1x + b1)
+θ = { W 1, . . . , W L , b1, . . . , bL }
+y = g(W 2h + b2)
+43
+
+--- Page 44 ---
+44
+
+--- Page 45 ---
+Example: nonlinear classification with a deep net
+x 2
+x 1
+z2
+z1
+W 1
+h2
+h1
+W 2
+z3
+y
+z = W 1x + b1
+h = g(z)
+y
+z3 = W 2h + b2
+y = 1( z3 > 0)
+45
+
+--- Page 46 ---
+What we’ll cover in this class
+• Backprop and differentiable programming 
+• Why we can approximate
+46
+
+--- Page 47 ---
+• 1 layer? Linear decision surface. 
+• 2+ layers? In theory, can represent any function. 
+Assuming non-trivial non-linearity. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+• But issue is efficiency: very wide two layers vs narrow 
+deep model? In practice, more layers helps.
+Representational power
+Lecture 3: Approximation theory 
+47
+
+--- Page 48 ---
+What we’ll cover in this class
+• Backprop and differentiable programming 
+• Why we can approximate 
+• Architectures
+48
+
+--- Page 49 ---
+“clown ﬁsh”
+Linear
+Non-linearity
+…
+Classify
+Deep nets
+f (x) = f L (f L −1(. . . f 2(f 1(x))))
+Architectures 
+Lecture 4: CNNs 
+Lecture 5: GNNs 
+Lecture 9: Transformers 
+Lecture 11: RNNs
+49
+
+--- Page 50 ---
+What we’ll cover in this class
+• Backprop and differentiable programming 
+• Why we can approximate 
+• Architectures 
+• When and why can we generalize
+50
+
+--- Page 51 ---
+Why do deep nets generalize?
+•
+Deep nets have so many parameters they could just act like look up tables, 
+regurgitating their training data 
+•
+Instead, they learn rules that generalize 
+•
+Defies classical theory!
+[Double-descent: Belkin, Hsu, Ma, Mandal, PNAS 2019]
+51
+
+--- Page 52 ---
+The simplicity hypothesis
+Emerging theory: 
+      deep nets learn simple functions that generalize
+Classical theory:  
+     big models learn complicated functions, and overfit the data
+Lecture 7: Generalization theory 
+Lecture 17: OOD generalization 
+52
+
+--- Page 53 ---
+What we expect you to have seen before
+• Gradient descent 
+• MLPs, Nonlinearities (ReLu) 
+• Softmax, cross-entropy loss
+53
+
+--- Page 54 ---
+“clown ﬁsh”
+Linear
+Non-linearity
+…
+Classify
+Deep nets
+f (x) = f L (f L −1(. . . f 2(f 1(x))))
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+54
+
+--- Page 55 ---
+Last layer
+…
+…
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+“clown ﬁsh”
+argmax
+Classiﬁer layer
+55
+
+--- Page 56 ---
+“clown ﬁsh”
+Loss
+error
+Network output
+…
+…
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+Ground truth label
+Loss function
+56
+
+--- Page 57 ---
+“clown ﬁsh”
+Loss
+small
+Network output
+…
+…
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+Ground truth label
+Loss function
+57
+
+--- Page 58 ---
+“grizzly bear”
+Loss
+large
+Network output
+…
+…
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+Ground truth label
+Loss function
+58
+
+--- Page 59 ---
+Network output
+…
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+clown ﬁsh
+Ground truth label
+…
+iguana
+elephant
+ˆy
+y
+H (y , ˆy ) = −
+K
+k =1
+yk log ˆyk
+Probability of the observed 
+data under the model
+softmax
+59
+
+--- Page 60 ---
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+…
+x
+…
+f
+f θ : X  R K
+Prediction
+Ground truth label
+log ˆy
+-
+0
+1
+log prob
+Prob
+∞
+0
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+60
+
+--- Page 61 ---
+Score
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+…
+x
+…
+f
+Prediction
+Ground truth label
+y
+f θ : X  R K
+−H (y , ˆy ) =
+K
+k =1
+yk log ˆyk
+−L ( ˆy , y )
+How much better you 
+could have done
+log ˆy
+-
+0
+1
+log prob
+- Loss
+Prob
+∞
+0
+-∞
+0
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+61
+
+--- Page 62 ---
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+…
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+…
+x
+f
+Prediction
+Ground truth label
+y
+f θ : X  R K
+Score
+−H (y , ˆy ) =
+K
+k =1
+yk log ˆyk
+−L ( ˆy , y )
+log ˆy
+-
+0
+1
+log prob
+- Loss
+Prob
+∞
+0
+-∞
+0
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+62
+
+--- Page 63 ---
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+…
+dolphin
+cat
+grizzly bear
+angel ﬁsh
+chameleon
+iguana
+elephant
+clown ﬁsh
+…
+x
+f
+Prediction
+Ground truth label
+y
+f θ : X  R K
+Score
+−H (y , ˆy ) =
+K
+k =1
+yk log ˆyk
+−L ( ˆy , y )
+log ˆy
+-
+0
+1
+log prob
+- Loss
+Prob
+∞
+0
+-∞
+0
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+63
+
+--- Page 64 ---
+“clown ﬁsh”
+Loss
+Learned
+Deep learning
+θ1
+θ2
+θ3
+θ4
+θ5
+θ6
+θ = arg min
+θ
+N
+i =1
+L (f θ(x ( i ) ), y ( i ) )
+L (f θ(x (1) ), y (1) )
+x (1)
+y (1)
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+64
+
+--- Page 65 ---
+“grizzly bear”
+Loss
+Learned
+Deep learning
+θ1
+θ2
+θ3
+θ4
+θ5
+θ6
+θ = arg min
+θ
+N
+i =1
+L (f θ(x ( i ) ), y ( i ) )
+L (f θ(x (2) ), y (2) )
+y (2)
+x (2)
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+65
+
+--- Page 66 ---
+“chameleon”
+Loss
+Learned
+Deep learning
+θ1
+θ2
+θ3
+θ4
+θ5
+θ6
+θ = arg min
+θ
+N
+i =1
+L (f θ(x ( i ) ), y ( i ) )
+y ( i )
+x ( i )
+L (f θ(x ( i ) ), y ( i ) )
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+66
+
+--- Page 67 ---
+What we expect you to have seen before
+• Gradient descent
+• MLPs, Nonlinearities (ReLu)
+• Softmax, cross-entropy loss
+• Parallel processing, tensors
+67
+
+--- Page 68 ---
+Batch (parallel) processing
+Loss
+Loss
+Loss
+…
+Σ
+Images
+Features
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+68
+
+--- Page 69 ---
+Tensors 
+(multi-dimensional arrays)
+…
+Furry?
+Is a ﬁsh?
+Size
+# Stripes
+…
+Each layer is a representation of the data 
+© source unknown. All rights reserved. This 
+content is excluded from our Creative 
+Commons license. For more information, see 
+https://ocw.mit.edu/help/faq-fair-use/
+69
+
+--- Page 70 ---
+x 2
+x 1
+z2
+z1
+W 1
+h2
+h1
+W 2
+z3
+y
+X
+W 1
+Z 1
+H 1
+W 2
+Z 2
+Y
+Tensor processing with batch size = 3:
+N batch
+x 1 x 2
+z1 z2
+h1 h2
+z3
+y
+z = W 1x + b1
+h = g(z)
+z3 = W 2h + b2
+y = 1( z3 > 0)
+Everything is a tensor
+70
+
+--- Page 71 ---
+What we’ll cover in this class
+• Backprop and differentiable programming
+• Why we can approximate
+• Architectures
+• When and why can we generalize
+• How deep networks represent data
+71
+
+--- Page 72 ---
+Serre, 2014
+Donahue, 2013
+Left and clown fish © source unknown. Middle © Springer Science
++Business Media, LLC, part of Springer Nature. Right © Donahue, et al. |
+All rights reserved. This content is excluded from our Creative Commons 
+license. For more information, see https://ocw.mit.edu/help/faq-fair-use/
+72
+
+--- Page 73 ---
+ViT block x3
+ViT block x3
+ViT block x3
+ViT block x3
+Representation Learning 
+Lecture 11: Reconstruction-based 
+Lecture 12: Similarity-based 
+Lecture 13: Theory 
+© Torralba, Isola, and Freeman. All rights reserved. This content is excluded from our Creative Commons license. For 
+more information, see https://ocw.mit.edu/help/faq-fair-use/
+73
+
+--- Page 74 ---
+What we’ll cover in this class
+• Backprop and differentiable programming
+• Why we can approximate
+• Architectures
+• When and why can we generalize
+• How deep networks represent data
+• Generative Models
+74
+
+--- Page 75 ---
+Generative Models
+stability.ai
+openai.com
+Generative Models 
+Lecture 14: Basics 
+Lecture 15: Representations + Generation 
+Lecture 16: Conditional Models 
+© openai.com and stability.ai. All rights reserved. This content is excluded from our Creative Commons license. For more information, see https://ocw.mit.edu/help/faq-fair-use/
+75
+
+--- Page 76 ---
+What we’ll cover in this class
+• Backprop and differentiable programming
+• Why we can approximate
+• Architectures
+• When and why can we generalize
+• How deep networks represent data
+• Generative Models
+• Reusing weights
+76
+
+--- Page 77 ---
+Serre, 2014
+Gandour, 2018
+Useful?
+Reuse
+Transfer Learning 
+Lecture 18: Models 
+Lecture 19: Data 
+ Left © Springer Science+Business Media, LLC, part of Springer Nature. 
+Right © Gandour, et al. |All rights reserved. This content is excluded 
+from our Creative Commons license. For more information, see https://
+ocw.mit.edu/help/faq-fair-use/
+77
+
+--- Page 78 ---
+What we’ll cover in this class
+• Backprop and differentiable programming
+• Why we can approximate 
+• Architectures
+• When and why can we generalize 
+• How deep networks represent data
+• Generative models 
+• Reusing weights 
+• Scaling
+78
+
+--- Page 79 ---
+302  
+Neurons
+15 Thousand 
+Neurons
+100 Billion  
+Neurons
+250 Billion  
+Neurons
+Scale
+Scale in Deep Learning 
+Lecture 6: Scaling Rules for Optimization 
+Lecture 22: Scaling laws 
+Lecture 23: Automatic gradient descent 
+79
+
+--- Page 80 ---
+1. Introduction to Deep Learning
+• How did we get where we are today? (Brief History) 
+• What we expect you have seen before (ok if you haven’t!) 
+• What we will cover in this class
+80
+
+--- Page 81 ---
+MIT OpenCourseWare
+https://ocw.mit.edu 
+6.7960 Deep Learning
+Fall 2024
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms 
+81

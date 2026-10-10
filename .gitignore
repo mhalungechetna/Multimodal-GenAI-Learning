@@ -1,0 +1,5 @@
+*.pdf
+extracted_figures/
+.ipynb_checkpoints/
+__pycache__/
+.env

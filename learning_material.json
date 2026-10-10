@@ -1,0 +1,35 @@
+{
+    "Deep Learning": {
+        "note": "Lecture 1 introduces deep learning and its role in machine learning.",
+        "question": "What is the main topic of Lecture 1?",
+        "options": [
+            "Introduction to Deep Learning",
+            "Database Management",
+            "Computer Networks",
+            "Web Development"
+        ],
+        "answer": "Introduction to Deep Learning"
+    },
+    "Neural Networks": {
+        "note": "The lecture describes neural networks as machine-learning architectures that use stacks of linear transformations interleaved with pointwise nonlinearities.",
+        "question": "According to the lecture, what do neural networks use?",
+        "options": [
+            "Only database tables",
+            "Stacks of linear transformations and pointwise nonlinearities",
+            "Only HTML pages",
+            "Only computer networks"
+        ],
+        "answer": "Stacks of linear transformations and pointwise nonlinearities"
+    },
+    "Backpropagation": {
+        "note": "The lecture explains that backpropagation enabled the training of multi-layer neural networks.",
+        "question": "What breakthrough helped train multi-layer neural networks?",
+        "options": [
+            "Backpropagation",
+            "Web scraping",
+            "Database indexing",
+            "File compression"
+        ],
+        "answer": "Backpropagation"
+    }
+}
